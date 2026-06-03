@@ -1,7 +1,8 @@
 /**
- * filterByRegion — filtert Förderprogramme nach dem Bundesland des Antragstellers.
+ * filterByRegion — gibt alle für eine:n Antragsteller:in relevanten Förderprogramme zurück.
  *
- * Gibt alle Programme zurück, deren Region mit dem angegebenen Bundesland übereinstimmt.
+ * Relevant ist ein Programm, wenn es im Bundesland der/des Antragsteller:in förderbar ist —
+ * also entweder dort regional angesiedelt ODER überregional (bundesweit / EU-weit) offen.
  */
 
 interface Program {
@@ -19,6 +20,7 @@ function filterByRegion(programs: Program[], bundesland: string): Program[] {
 // Demo
 // ---------------------------------------------------------------------------
 
+// Demo-Daten: vereinfachte Illustration — NICHT der echte Datensatz (siehe ../data/programs.json).
 const programs: Program[] = [
   { name: "aws Gründerfonds",         region: "bundesweit", stage: "Seed",    max_summe: 200_000 },
   { name: "FFG Basisprogramm",        region: "bundesweit", stage: "Growth",  max_summe: 500_000 },

@@ -1,6 +1,6 @@
 # Seed-Dataset — Felder & Hinweise
 
-> ⚠️ **Synthetisch / vereinfacht, Stand 2026-06 — keine offizielle AI:AT-Position.** Die Programmnamen sind an reale österreichische & EU-Förderungen angelehnt; die Werte (Summen, Quoten, Deadlines) sind vereinfacht/gerundet. Kein Domänenwissen nötig — alles steckt in den Daten.
+> ⚠️ **Synthetisch / vereinfacht, Stand 2026-06 — keine offizielle AI:AT-Position.** Die Programmnamen sind an reale österreichische & EU-Förderungen angelehnt; die Werte (Summen, Quoten, Deadlines) sind vereinfacht/gerundet. Kein Domänenwissen nötig — die Felder unten verstehst du ohne Vorwissen.
 
 ## `programs.json` / `programs.csv` (~20 Programme)
 
@@ -20,7 +20,11 @@
 | `url` | string | Link zur Programmseite |
 | `kurzbeschreibung` | string | 1–2 Sätze Beschreibung |
 
-`programs.json` trägt zusätzlich ein `_hinweis`-Feld mit dem Synthetik-Vermerk.
+`programs.json` trägt zusätzlich ein `_hinweis`-Feld mit dem Synthetik-Vermerk. *(Die `programs.csv` beginnt direkt mit der Header-Zeile — der Disclaimer steht hier im README, damit Excel/Sheets die CSV sauber einlesen.)*
+
+> ℹ️ **Zwei Hinweise zum Dataset:**
+> - **Programm-Abdeckung pro Bundesland ist nur illustrativ** — nicht jedes Bundesland hat hier ein eigenes Programm (z. B. Oberösterreich). Das ist **beabsichtigt** und ein realistischer Praxisfall fürs Matching, **keine** Marktaussage.
+> - **Du musst nicht jedes Feld nutzen** — wähle, was für dein Matching bzw. deine Analyse sinnvoll ist (ob z. B. `foerderquote` einfließt, entscheidest du und begründest es kurz).
 
 ## `examples/profil_*.json` (Beispiel-Profile)
 

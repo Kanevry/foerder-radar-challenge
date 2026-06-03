@@ -15,7 +15,7 @@ Willkommen! Schön, dass du dabei bist. Dieses Repo enthält **alles, was du zum
 | **AI Developer** | Bau den Förder-Radar-PoC + ein kurzes Code-Review | 📂 [`dev/`](./dev/) |
 | **AI Business Analyst & Venture Builder** | Ist das ein Geschäft? Business Case + Go-to-Market | 📂 [`business/`](./business/) |
 
-> Du weißt aus dem Gespräch mit uns, welche Rolle deine ist — leg einfach im passenden Ordner los. (Neugierig auf die andere Seite? Gern reinschauen — für deine Abgabe zählt nur dein Ordner.)
+> Du weißt aus dem Gespräch mit uns, welche Rolle deine ist — leg einfach im passenden Ordner los. **Falls unklar, welche Rolle deine ist, frag kurz per Mail nach.** (Neugierig auf die andere Seite? Gern reinschauen — für deine Abgabe zählt nur dein Ordner.)
 
 ## 📊 Die Daten (`data/`)
 
@@ -25,13 +25,13 @@ Beide Rollen teilen sich dieselbe Datengrundlage:
 - [`data/programs.csv`](./data/programs.csv) — dieselben Daten, bequem in Excel/Sheets zu öffnen
 - [`data/examples/`](./data/examples/) — 2–3 Beispiel-Profile als Ausgangspunkt
 
-> ⚠️ **Synthetisch / vereinfacht, Stand 2026-06 — keine offizielle AI:AT-Position.** Kein Domänenwissen nötig — alles, was du brauchst, steckt in den Daten.
+> ⚠️ **Synthetisch / vereinfacht, Stand 2026-06 — keine offizielle AI:AT-Position.** Kein Domänenwissen nötig — die Programm-Daten sind selbsterklärend. *(Business-Rolle: die Markt-/Preis-Zahlen fürs Sizing stecken **nicht** in den Daten — die recherchierst du frei, siehe deinen Brief.)*
 
 ## ⏱️ Das Wichtigste in Kürze
 
 - **Aufwand:** ~4–6 fokussierte Stunden. Du hast **7 Kalendertage ab Erhalt** — das Fenster ist für *Flexibilität*, nicht zum Durchgrinden.
 - **KI:** Nutze jede KI, jede Library, google frei — das wird **erwartet**, nicht nur erlaubt.
-- **Abgabe:** per E-Mail an **aiandbusinessgrowth@ai-at.eu**. Die konkreten Daten (Abgabedatum, ggf. Upload-Link) stehen in deiner Begleit-E-Mail.
+- **Abgabe:** per E-Mail an **aiandbusinessgrowth@ai-at.eu**. Für deinen Code/deine Doku erstellst du ein **eigenes Repo** (z. B. `git init` in deinem Arbeitsordner oder dieses Repo als Vorlage klonen → zu deinem GitHub/GitLab pushen) und schickst uns den Link. Die konkreten Daten (Abgabedatum, ggf. Upload-Link) stehen in deiner Begleit-E-Mail.
 - **Bewertung:** transparent — die Gewichtung findest du in deinem Rollen-Brief.
 - **Wichtig:** Ein rauer Kern mit klarem Denken schlägt eine polierte, oberflächliche Umsetzung. Mehr Stunden bedeuten bei uns **nicht** mehr Punkte.
 

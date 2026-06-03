@@ -10,7 +10,9 @@ Es gibt keine Musterlösung, die du treffen musst. Wir schauen, wie du ein unsch
 
 Unser Tech-Team baut einen Prototyp: **„Förder-Radar"** — ein KI-Assistent, der österreichischen Startups & KMU in Sekunden zeigt, welche Förderungen (FFG, aws, EU, Bundesländer…) zu ihnen passen, warum, und einen ersten Antrags-Absatz draftet. Deine Aufgabe: **Ist das ein Geschäft? Und wie bringen wir es an den Markt?**
 
-Wir liefern dir als Orientierung ein Seed-Dataset (~20 Förderprogramme als JSON/CSV — die CSV öffnest du bequem in Excel/Sheets) + Beispiel-Profile. Dasselbe Dataset bekommt auch die Dev-Rolle. *Die Programme sind die Angebotsseite — deine zahlenden Kund:innen sind die Startups/KMU, die danach suchen; die Beispiel-Profile sind dein Ausgangspunkt fürs Sizing.*
+Wir liefern dir als Orientierung ein Seed-Dataset (~20 Förderprogramme als JSON/CSV — die CSV öffnest du bequem in Excel/Sheets) + Beispiel-Profile. Dasselbe Dataset bekommt auch die Dev-Rolle. *Die Programme sind die **Angebotsseite** — deine zahlenden Kund:innen sind die Startups/KMU, die danach suchen.*
+
+> ⚠️ **Wichtig fürs Sizing:** Die Daten liefern bewusst **keine** Markt-, Preis- oder Conversion-Zahlen (sie zeigen nur das Förder-Angebot). Die Anzahl erreichbarer Kund:innen, den Preis und die Conversion **recherchierst/schätzt du selbst** — KI + Web sind genau dafür da (gern mit Quelle). Die Beispiel-Profile dienen dazu, dein **ICP/Segment zu schärfen**, nicht zur Mengen-Herleitung.
 
 > 📂 **Im Repo:** [`../data/`](../data/) — `programs.json` + `programs.csv` (Feld-Doku: [`../data/README.md`](../data/README.md)).
 
@@ -20,14 +22,16 @@ Für diese Analyse behandelst du Förder-Radar als eigenständiges, kommerzielle
 
 1. **Lean Canvas** für „Förder-Radar" (problem-first).
 2. **1-Seiten-Business-Case** mit:
-   - **Marktgröße bottom-up** (Zielkunden × Preis × Conversion). *Bitte kein „1% von einem Riesenmarkt"* — z.B. *5.000 erreichbare Ziel-KMU × €40/Monat × 3 % Conversion*; eine hergeleitete Zahl schlägt eine große Zahl ohne Herleitung.
+   - **Marktgröße bottom-up** — die **Form** zählt: `‹erreichbare Kund:innen› × ‹Monatspreis› × ‹Conversion›`. *Bitte kein „1 % von einem Riesenmarkt"; eine hergeleitete Zahl schlägt eine große ohne Herleitung.* Leite **jeden** Faktor sichtbar her — auch der **Preis ist Teil deiner Analyse** (begründe ihn, statt ihn anzunehmen). *(Form-Beispiel aus einer ganz anderen Branche, nur zur Struktur-Illustration: 800 regionale Handwerksbetriebe × €29/Monat × 5 %.)*
    - **Grobe Unit Economics** (CAC, ARPU/LTV, Payback). *Kurz: Was kostet ein:e Kund:in (CAC) vs. was bringt sie (ARPU pro Monat, LTV über die Lebensdauer), und nach wie vielen Monaten ist der CAC zurückverdient (Payback)? Grobe, begründete Schätzungen genügen.*
    - **Die riskanteste Annahme benannt + ein billiger Test dafür.**
-3. **ICP + Value Proposition** für **ein** Segment. Markiere jede Annahme als *validiert* oder *Hypothese*. (Bonus: 2–3 echte Mini-Gespräche mit Zielkund:innen oder ein schneller Landing-Page-Smoke-Test.)
+3. **ICP + Value Proposition** für **ein** Segment. Markiere jede Annahme als *validiert* oder *Hypothese*. **Schon 2–3 schnelle Signale** (kurze Gespräche mit Zielkund:innen oder ein Landing-Page-Smoke-Test) heben dieses Deliverable von *solide* auf *stark* — ohne sie taggst du einfach sauber als Hypothese. (Im Zeitfenster nicht machbar? Dann genügt sauberes Taggen — wir erwarten keine Marktforschung.)
 4. **Marketing-Mini-Brief:** ein ICP, ein Kanal, **3 hypothetische Ads** (Headline + Body + Visual-Idee) + ein **Landing-Page-Hero** (Headline, Subhead, CTA, 3 Value-Bullets) + eine **Mess-Zeile pro Asset** („Erfolg = …").
 
 ### ⭐ Optionaler Stretch (so glänzt du)
 Bau eine **lauffähige Mini-Automation** (n8n, Make, Zapier oder ein Custom-GPT), die einen Teil *deiner eigenen* Arbeit erledigt hat — z.B. Markt-/Wettbewerbs-Recherche, Generierung von Ad-Varianten, Auswertung von Umfrage-Daten. Erklär kurz das System. Das zeigt uns „automatisiere dich selbst" konkret.
+
+> 💡 **Zur 20 %-Dimension „AI-Leverage":** Schon *wie* du KI im Arbeitsprozess einsetzt **und prüfst** (sichtbar in Decision-Log + Prompts) zählt hier voll. Die optionale Automation ist der Weg an die *Spitze* dieser Dimension — nicht die Eintrittskarte.
 
 ## Spielregeln
 
@@ -37,14 +41,14 @@ Bau eine **lauffähige Mini-Automation** (n8n, Make, Zapier oder ein Custom-GPT)
 
 > **Wichtig:** Ein rauer Kern mit klarem Denken schlägt eine polierte, aber oberflächliche Umsetzung. Wir meinen das ernst — bitte nicht überinvestieren. Mehr Stunden bedeuten bei uns **nicht** mehr Punkte; wir bewerten das Kern-Ergebnis, nicht den Zeitaufwand.
 
-Das Seed-Dataset ist synthetisch/vereinfacht (Stand 2026-06) — kein Domänenwissen nötig, alles steckt in den Daten.
+Das Seed-Dataset ist synthetisch/vereinfacht (Stand 2026-06) — kein Domänenwissen nötig: die Programm-Daten verstehst du ohne Vorwissen (die Markt-/Preis-/Conversion-Zahlen fürs Sizing recherchierst du selbst, siehe oben).
 
 AI Factory Austria steht für Chancengleichheit. Brauchst du Unterstützung oder Anpassungen im Prozess, sag uns Bescheid — wir helfen. Ob Uni, Bootcamp oder self-taught: es zählt, wie du denkst und mit KI arbeitest.
 
 ## Was du abgibst
 
 1. **Lean Canvas + Business-Case + ICP/VP + Ads-Brief** (ein PDF oder ein Doc, gern knapp; max. ~5 Slides falls du Slides nutzt).
-2. **Walkthrough (≤5 min Loom/Screen-Recording):** führ uns durch dein Denken — Recherche → Insight → Empfehlung — und erklär, *wie du KI eingesetzt* hast.
+2. **Walkthrough (1 Take, 3–5 min, max. 5):** ein Loom/Screen-Recording — führ uns durch dein Denken (Recherche → Insight → Empfehlung) und erklär, *wie du KI eingesetzt* hast. *(Kein Video möglich oder gewünscht? Ein knappes schriftliches Walkthrough-Skript zählt als gleichwertig.)*
 3. **Decision-Log + Schlüssel-Prompts / KI-Workflow:** Schlüssel-Entscheidungen, Trade-offs, was du gecuttet hast + die KI-Prompts, die den Unterschied gemacht haben — zeig uns, wie du mit KI arbeitest.
 4. **(Falls Stretch)** Link/Export der Automation + 3–5 Sätze System-Erklärung.
 5. **Selbst-Report:** investierte Stunden (ehrlich).
@@ -62,7 +66,7 @@ AI Factory Austria steht für Chancengleichheit. Brauchst du Unterstützung oder
 
 ## Abgabe & Zeitplan
 
-- 🗓️ **Deadline:** 7 Kalendertage ab Erhalt dieses Briefs.
+- 🗓️ **Deadline:** **die Begleit-E-Mail nennt das verbindliche Abgabedatum** (Richtwert: 7 Kalendertage ab Erhalt).
 - 📤 **Abgabe:** per E-Mail an aiandbusinessgrowth@ai-at.eu.
 - ⏳ **Rückmeldung:** Wir melden uns innerhalb von ~10 Werktagen — mit einem Termin für den Live-Teil oder einer kurzen Rückmeldung.
 

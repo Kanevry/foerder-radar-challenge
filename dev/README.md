@@ -15,14 +15,25 @@ Es gibt keine Musterlösung, die du treffen musst. Wir schauen, wie du ein unsch
 > 📂 **Im Repo:** [`../data/`](../data/) — `programs.json` + `programs.csv` + Beispiel-Profile (Feld-Doku: [`../data/README.md`](../data/README.md)).
 
 ### Teil A — Bau den PoC
-- **Input:** ein Startup-/KMU-Profil (Branche, Stage, Bundesland, Team-Größe, Vorhaben, gesuchte Summe).
-- **Output:** ein **begründetes Ranking** der passendsten Programme (je „passt, weil… / passt nicht, weil…") + **ein generierter Antrags-Absatz** fürs Top-Programm.
+- **Input:** ein Startup-/KMU-Profil (Branche, Stage, Bundesland, Team-Größe, Vorhaben, gesuchte Summe). Dein Tool soll **mindestens eines der mitgelieferten Beispiel-Profile** verarbeiten — *wie* du Profile reinreichst (hardcoded, Datei, CLI-Argument …), ist dir überlassen.
+- **Output:** ein **begründetes Ranking** der passendsten Programme — z. B. die **Top 3–5** (die genaue Zahl ist deine Entscheidung, begründe sie kurz) — je „passt, weil… / passt nicht, weil…" + **ein generierter Antrags-Absatz** fürs Top-Programm.
 - **Form:** lauffähiges **Git-Repo** mit echtem Code + ein README, das uns das Ding in <5 min zum Laufen bringt. Stack ist dir überlassen. n8n darfst du integrieren, ist aber optional.
+
+> 🧭 **Die interessante Design-Entscheidung:** Die Programme tragen strukturierte `themen`-Tags, dein Profil aber nur Freitext (`branche`, `vorhaben`). Wie du beides verknüpfst — Keywords, Embeddings, LLM-Tagging, manuell — ist genau die Stelle, an der wir dein Urteil sehen. Es gibt keinen „richtigen" Weg; auch wie du `gesuchte_summe`, `max_summe` und `foerderquote` gewichtest, ist bewusst dir überlassen — wir achten auf die **Begründung**, nicht auf eine vorgegebene Formel.
+
+*So **könnte** ein Eintrag aussehen — rein illustrativ, **keine** Musterlösung, nur zur Format-Orientierung:*
+
+```
+#1  aws Seedfinancing  (aws)  —  Fit 88 %
+    passt, weil:        Stage „Seed" passt exakt; bundesweit — Sitz Tirol kein Hindernis.
+    passt nicht, weil:  thematischer Overlap gering.
+    Antrags-Absatz:     „Unser Team aus … plant …"
+```
 
 > 💡 Ein echter LLM-Call ist erlaubt, aber **nicht Pflicht** — ein deterministisch oder templatebasiert erzeugter Antrags-Absatz ist völlig okay. **Kein API-Key nötig**, falls du keinen hast.
 
 ### Teil B — Code-Review (~15 min)
-Wir geben dir ein kurzes, KI-generiertes Code-Snippet (TypeScript — keine TS-Erfahrung nötig, der Bug ist sprachunabhängig verständlich). **Es gibt einen zentralen funktionalen Bug — finde *den*, fixe ihn, und schreib 3–5 Sätze dazu** (gern auch, was dir sonst noch auffällt). (Wir wollen sehen, ob du KI-Output beurteilen kannst — nicht nur erzeugen.)
+Wir geben dir ein kurzes, KI-generiertes Code-Snippet (TypeScript — keine TS-Erfahrung nötig, der Bug ist sprachunabhängig verständlich; **Tipp:** vergleiche, was der Doc-Kommentar *verspricht*, mit dem, was der Code *tut*). **Es gibt einen zentralen funktionalen Bug — finde *den*, fixe ihn, und begründe in 3–5 Sätzen, warum es einer ist.** Sag uns **auch, was dir sonst auffällt** (fehlende Edge-Cases, fragwürdige Annahmen, Validierung) — diese weiterführende Kritik zählt für uns genauso wie der Fix selbst. (Wir wollen sehen, ob du KI-Output beurteilen kannst — nicht nur erzeugen.)
 
 > 📄 Das Snippet liegt als Datei unter [`code-review/snippet.ts`](./code-review/snippet.ts) — und ist unten in **Anhang A** abgedruckt.
 
@@ -30,7 +41,7 @@ Wir geben dir ein kurzes, KI-generiertes Code-Snippet (TypeScript — keine TS-E
 
 - ⏱️ **Aufwand: ~4–6 fokussierte Stunden.** Du hast eine Woche — die ist für *Flexibilität*, nicht zum Durchgrinden. Bitte nicht überinvestieren: **wir bewerten Denken & Urteil, nicht Politur.** *(Die 4–6 h schließen Walkthrough + Decision-Log ein — Loom: 1 Take, 3–5 min; Decision-Log: 5–10 Zeilen Stichworte.)*
 - 🤖 **Nutze jede KI, jede Library, google frei.** Wird erwartet, nicht nur erlaubt. Cursor, Claude, Copilot, Coding-Agents — leg los.
-- 🎯 **Der Kern (A + B) ist die Latte.** Stretch-Goals (UI, Tests/Eval-Set, Confidence-Scores, mehr Datenquellen, Deployment) sind zum Glänzen — komplett optional.
+- 🎯 **Der Kern (A + B) ist die Latte** — dazu gehören auch **ein paar sinnvolle Tests** (kein Coverage-Theater; zählen mit 10 %). Echte Stretch-Goals (UI, Confidence-Scores, mehr Datenquellen, Deployment, ein größeres Eval-Set) sind zum Glänzen — komplett optional.
 
 > **Wichtig:** Ein rauer Kern mit klarem Denken schlägt eine polierte, aber oberflächliche Umsetzung. Wir meinen das ernst — bitte nicht überinvestieren. Mehr Stunden bedeuten bei uns **nicht** mehr Punkte; wir bewerten das Kern-Ergebnis, nicht den Zeitaufwand.
 
@@ -40,7 +51,7 @@ AI Factory Austria steht für Chancengleichheit. Brauchst du Unterstützung oder
 
 1. **Repo-Link** (GitHub/GitLab) mit Code + README.
 2. **Code-Review-Antwort** (Teil B) — als Datei im Repo oder kurzes Doc.
-3. **Walkthrough (≤5 min Loom/Screen-Recording):** zeig dein Ergebnis und erklär *wie* du gebaut hast — vor allem die KI-Schritte.
+3. **Walkthrough (1 Take, 3–5 min, max. 5):** ein Loom/Screen-Recording — zeig dein Ergebnis und erklär *wie* du gebaut hast, vor allem die KI-Schritte. *(Kein Video möglich oder gewünscht? Ein knappes schriftliches Walkthrough-Skript zählt als gleichwertig — sag einfach Bescheid.)*
 4. **Kurzes Decision-Log + Schlüssel-Prompts:** 5–10 Zeilen Entscheidungen/Trade-offs + die KI-Prompts, die den Unterschied gemacht haben. Zeig uns, *wie du mit KI zusammenarbeitest* — das ist genau die Fähigkeit, für die wir die Rolle besetzen.
 5. **Selbst-Report:** wie viele Stunden hast du investiert? (Ehrlich — kein Maluspunkt.)
 
@@ -59,7 +70,7 @@ AI Factory Austria steht für Chancengleichheit. Brauchst du Unterstützung oder
 
 ## Abgabe & Zeitplan
 
-- 🗓️ **Deadline:** 7 Kalendertage ab Erhalt dieses Briefs.
+- 🗓️ **Deadline:** **die Begleit-E-Mail nennt das verbindliche Abgabedatum** (Richtwert: 7 Kalendertage ab Erhalt).
 - 📤 **Abgabe:** per E-Mail an aiandbusinessgrowth@ai-at.eu.
 - ⏳ **Rückmeldung:** Wir melden uns innerhalb von ~10 Werktagen — mit einem Termin für den Live-Teil oder einer kurzen Rückmeldung.
 
@@ -83,9 +94,10 @@ Das ist das Snippet für Teil B — finde den Bug, fixe ihn, kritisiere kurz. (A
 
 ```ts
 /**
- * filterByRegion — filtert Förderprogramme nach dem Bundesland des Antragstellers.
+ * filterByRegion — gibt alle für eine:n Antragsteller:in relevanten Förderprogramme zurück.
  *
- * Gibt alle Programme zurück, deren Region mit dem angegebenen Bundesland übereinstimmt.
+ * Relevant ist ein Programm, wenn es im Bundesland der/des Antragsteller:in förderbar ist —
+ * also entweder dort regional angesiedelt ODER überregional (bundesweit / EU-weit) offen.
  */
 
 interface Program {
@@ -103,6 +115,7 @@ function filterByRegion(programs: Program[], bundesland: string): Program[] {
 // Demo
 // ---------------------------------------------------------------------------
 
+// Demo-Daten: vereinfachte Illustration — NICHT der echte Datensatz (siehe ../data/programs.json).
 const programs: Program[] = [
   { name: "aws Gründerfonds",         region: "bundesweit", stage: "Seed",    max_summe: 200_000 },
   { name: "FFG Basisprogramm",        region: "bundesweit", stage: "Growth",  max_summe: 500_000 },
